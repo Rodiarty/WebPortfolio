@@ -1,0 +1,149 @@
+:root{
+    --maxw:1200px;
+    --gutter:20px;
+    --header-height:70px;
+    --logo-height:50px;
+    --gap:24px;
+    --text-light:#ffffff;
+    --text-dark:#111111;
+    --bg-page:#ffffff;
+    --ar-bg: rgba(128,128,128,0.28);
+}
+*{box-sizing:border-box}
+body{
+    margin:0;
+    background:var(--bg-page);
+    font-family:Inter, Roboto, Arial, sans-serif;
+    color:var(--text-dark)
+}
+main{
+    padding-top:var(--header-height)
+}
+
+/* Хедер: дві колонки — ліва (логотип), права (всі інші елементи) */
+.topbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:var(--header-height);
+    background:transparent;
+}
+.topbar-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    height:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    padding:0 var(--gutter)
+}
+
+/* Логотип (png) */
+.logo{
+    justify-self:left;
+    padding-top:12px;
+}
+.logo img{
+    height:50px;
+    display:block;
+    width:auto
+}
+
+.right-group{
+    justify-self:right;
+    display:flex;
+    align-items:center;
+    gap:var(--gap);
+}
+
+/* Навігація (wide) */
+.main-nav{
+    display:flex;
+    gap:20px;
+    align-items:center
+}
+.nav-link{
+    color:inherit;
+    text-decoration:none;
+    font-weight:400;
+    padding:6px 0
+}
+.nav-link.active{
+    font-weight:700;
+    text-decoration:underline
+}
+
+.more-list{
+    position:absolute;
+    top: 120%;
+    right: -70%;
+    list-style:none;
+    margin:0;
+    background:whitesmoke;
+    border:0;
+    padding:0;
+}
+.more-list li a{
+    display:block;
+    padding:8px 12px;
+    color:inherit;
+    text-decoration:none;
+    width: 120px;
+}
+
+.btn-ar{
+    background:var(--ar-bg);
+    border:0;
+    padding:8px 12px;
+    cursor:pointer;
+    color:inherit;
+    font-weight:600;
+    width: 70px;
+}
+
+.burger{
+    display:block;
+    justify-self:right;
+    position: relative;
+}
+.burger summary{
+    list-style:none;
+    border:0;
+    background:none;
+    padding:6px;
+    cursor:pointer;
+    display:inline-flex;
+    flex-direction:column;
+    gap:6px;
+    align-items:flex-start
+}
+.burger summary::-webkit-details-marker{display:none}
+.burger .bar{
+    display:block;
+    height:2px;
+    background:currentColor;
+    width:clamp(18px,4.5vw,28px)
+}
+.burger .bar.short{
+    width:clamp(10px,3vw,16px);
+    margin-left:auto
+}
+
+
+@media (min-width:850px){
+    .mobile-li{
+        display:none
+    }
+}
+@media (max-width:850px){
+    .main-nav{display:none}
+    .right-group{gap:16px}
+}
+
+@media (max-width:480px){
+    :root{--header-height:56px;--gap:12px}
+    .logo img{height:34px}
+    .burger .bar{width:clamp(14px,5vw,22px)}
+    .burger .bar.short{width:clamp(8px,3vw,12px)}
+}
