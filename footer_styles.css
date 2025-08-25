@@ -1,0 +1,85 @@
+footer {
+    background: linear-gradient(to bottom, #37362C, #272622);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 40px;
+}
+
+.footer-info {
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.footer-info p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.footer-info p:nth-child(1) {
+    margin-bottom: 1.5rem;
+}
+
+.footer-info p:nth-child(4) {
+    margin-bottom: 1rem;
+}
+
+.footer-info p:nth-child(5) {
+    margin-bottom: 0.3rem;
+}
+
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-social .social-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social .social-icons a img {
+    width: 24px;
+    margin-right: 10px;
+}
+.footer-social .social-icons a.smaller-icon img{
+    width: 20px;
+    height: auto;
+}
+
+.footer-social .copyright {
+    font-size: 12px;
+    margin-top: auto;
+}
+
+.footer-logo {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.footer-logo img {
+    max-width: 120px;
+    height: auto;
+}
+
+/* Для мобілок */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footer-logo {
+        margin-top: 20px;
+        margin-left: 0; 
+    }
+}
